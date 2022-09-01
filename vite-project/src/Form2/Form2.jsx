@@ -1,17 +1,32 @@
 import React from "react";
+import Button from "../Button/Button";
 
-const Form2 = () => {
+const Form2 = ({ valor, handleChange, handleClick }) => {
   return (
-    <div>
-      <form>
-        <label htmlFor="CEP">CEP:</label>
-        <input type="text" name="CEP"></input>
-        <label htmlFor="endereco">Endereço:</label>
-        <input type="text" name="endereco"></input>
-        <label htmlFor="complemento">Complemento:</label>
-        <input type="text" name="complemento"></input>        
-      </form>
-    </div>
+    <form>
+      <label>CEP</label>
+      <input
+        type="text"
+        value={valor.cep}
+        name="cep"
+        onChange={(e) => handleChange(e, "cep")}
+      />
+      <label>Endereço</label>
+      <input
+        type="text"
+        value={valor.endereco}
+        name="endereco1"
+        onChange={(e) => handleChange(e, "endereco")}
+      />
+      <label>Complemento</label>
+      <input
+        type="text"
+        value={valor.complemento}
+        name="complemento"
+        onChange={(e) => handleChange(e, "complemento")}
+      />
+      <Button handleClick={handleClick} texto="Próximo" />
+    </form>
   );
 };
 

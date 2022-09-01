@@ -1,16 +1,16 @@
-import React from 'react'
-import Button from '../Button/Button'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import S from "./Menu.module.css";
 const Menu = () => {
   return (
     <div>
-        <nav>
-        <Button texto="Home"/>
-        <Button texto="Cadastrar"/>
-        <Button texto="Clientes"/>
-        </nav>
+      <nav className={S.nav}>
+        <Link to={"/"}> Home </Link>
+        <Link to={"/Cadastrar"}> Cadastrar </Link>
+    
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

@@ -1,17 +1,32 @@
 import React from "react";
 
-const Form3 = () => {
+const Form3 = ({valor, handleChange, handleClick}) => {
   return (
-    <div>
-      <form>
-        <label htmlFor="data">Data de Nascimento:</label>
-        <input type="date" name="data"></input>
-        <label htmlFor="cpf">CPF:</label>
-        <input type="text" name="cpf"></input>
-        <label htmlFor="renda">Renda Mensal:</label>
-        <input type="number" name="renda" step="R$ 0.000"></input>
-      </form>
-    </div>
+    <form>
+      <label>Data de Nascimento</label>
+      <input
+        type="date"
+        value={valor.date}
+        name="date"
+        onChange={(e)=>handleChange(e,"date")}
+      />
+      <label>CPF</label>
+      <input
+        type="text"
+        value={valor.cpf}
+        name="cpf"
+        onChange={(e)=>handleChange(e,"cpf")}
+      />
+      <label>Renda</label>
+      <input
+        type="text"
+        value={valor.renda}
+        name="renda"
+        onChange={(e)=>handleChange(e,"renda" )}
+      />
+      
+      <Button handleClick={handleClick} texto="Salvar" />
+    </form>
   );
 };
 
